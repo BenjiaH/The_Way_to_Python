@@ -3,17 +3,21 @@ class Rectangle:
         self.width = width
         self.height = height
 
-    def GetArea(self):
+    # 装饰器合成了一个只读属性。此时只读属性名与方法名相同
+    @property
+    def Area(self):
         print("getarea")
         return self.width * self.height
 
-    # 合成了一个计算面积的属性
-    area = property(fget=GetArea, doc="获取面积的属性")
+    # # 合成了一个计算面积的属性
+    # area = property(fget=GetArea, doc="获取面积的属性")
 
+    @property  # 默认是只读属性
     def GetSize(self):
         print("getsize")
         return self.width, self.height
 
+    @GetSize.setter
     def SetSize(self, size):
         print("setsize")
         self.width = size[0]
