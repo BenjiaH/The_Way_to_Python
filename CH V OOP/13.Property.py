@@ -29,7 +29,7 @@ print(r.area)
 
 # 访问size属性（实际上就是调用getter方法）
 print(r.size)
-# 对size属性赋值（实际上就是调用中stter方法）
+# 对size属性赋值（实际上就是调用中setter方法）
 r.size = (5, 6)
 
 print(r.area)
