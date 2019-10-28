@@ -17,7 +17,7 @@ class Rectangle:
         print("getsize")
         return self.width, self.height
 
-    @size.setter # 装饰出setter方法
+    @size.setter  # 装饰出setter方法
     def size(self, size):
         print("setsize")
         self.width = size[0]
