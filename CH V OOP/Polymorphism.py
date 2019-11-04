@@ -17,6 +17,8 @@ class Triangle:
 class Circle:
     def draw(self, canvas):
         print("在{}上绘制圆形".format(canvas))
+
+
 c = Canvas()
 # 传入Rectangle参数，绘制矩形
 c.draw_pic(Rectangle())
