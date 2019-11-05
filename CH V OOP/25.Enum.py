@@ -12,3 +12,6 @@ print(Season.SPRING.value)
 print(Season["SUMMER"])
 # 根据枚举值访问枚举对象
 print(Season(3))
+
+for name, member in Season.__members__.items():
+    print(name, "\t->", member, ",", member.value)
