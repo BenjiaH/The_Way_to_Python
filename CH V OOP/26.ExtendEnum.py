@@ -1,6 +1,7 @@
 import enum
 
 
+@unique
 class Orientation(enum.Enum):
     # 为序列值指定value值
     EAST = "东"
