@@ -23,7 +23,7 @@ class Account:
                 time.sleep(0.001)
                 # 修改余额
                 self._balance -= draw_amount
-                print("\t余额为：" + str(self._balance))
+                print("\t" + threading.current_thread().name + "余额为：" + str(self._balance))
             else:
                 print(threading.current_thread().name + "取钱失败！余额不足！")
         finally:
