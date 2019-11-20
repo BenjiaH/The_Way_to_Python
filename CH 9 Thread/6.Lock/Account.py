@@ -7,7 +7,7 @@ import time
 class Account:
     def __init__(self, account_no, balance):
         self.account_no = account_no
-        self.balance = balance
+        self._balance = balance
         self.lock = threading.RLock()
 
     def get_balance(self):
@@ -17,7 +17,7 @@ class Account:
         # 加锁
         self.lock.acquire()
         try:
-            if self.balance >= draw_amount:
+            if self._balance >= draw_amount:
                 # 吐出钞票
                 print(threading.current_thread().name + "取钱成功！吐出钞票：" + str(draw_amount))
                 time.sleep(0.001)
