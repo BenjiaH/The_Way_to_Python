@@ -11,9 +11,9 @@ class A:
     def foo(self, b):
         try:
             self.lock.acquire()
-            print("当前线程名：" + threading.current_thread().name + "进入了A实例的foo()方法")
+            print("当前线程名：" + threading.current_thread().name + " 进入了A实例的foo()方法")
             time.sleep(0.2)
-            print("当前线程名：" + threading.current_thread().name + "企图调用B实例的last()方法")
+            print("当前线程名：" + threading.current_thread().name + " 企图调用B实例的last()方法")
             b.last()
         finally:
             self.lock.release()
@@ -33,10 +33,10 @@ class B:
     def bar(self, a):
         try:
             self.lock.acquire()
-            print("当前线程名：" + threading.current_thread().name + "进入了B实例的bar()方法")
+            print("当前线程名：" + threading.current_thread().name + " 进入了B实例的bar()方法")
             time.sleep(0.2)
-            print("当前线程名：" + threading.current_thread().name + "企图调用A实例的last()方法")
-            b.last()
+            print("当前线程名：" + threading.current_thread().name + " 企图调用A实例的last()方法")
+            a.last()
         finally:
             self.lock.release()
 
